@@ -1483,7 +1483,7 @@ class Form extends ViewableData implements HasRequestHandler
      * @param FieldList $fieldList An optional list of fields to process.  This can be useful when you have a
      * form that has some fields that save to one object, and some that save to another.
      */
-    public function saveInto(DataObjectInterface $dataObject, $fieldList = null)
+    public function saveInto(ViewableData|DataObjectInterface $dataObject, $fieldList = null)
     {
         $form = $this;
         $dataObject->invokeWithExtensions('onBeforeFormSaveInto', $form, $fieldList);
